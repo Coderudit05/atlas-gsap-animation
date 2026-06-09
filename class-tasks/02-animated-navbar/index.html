@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="">
+    <div class="container min-h-screen">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+
+      <header class="bg-black text-white">
+        <div
+          class="wrapper h-16 flex items-center justify-between max-w-7xl mx-auto"
+        >
+          <div
+            id="logo"
+            class="text-[#FE6467] text-3xl font-bold cursor-pointer"
+          >
+            Portfolio
+          </div>
+          <nav class="flex gap-6 text-white/50">
+            <a href="#" class="">Home</a>
+            <a href="#" class="">About</a>
+            <a href="#" class="">Work</a>
+            <a href="#" class="">Projects</a>
+          </nav>
+          <div id="nav-btn">
+            <button class="bg-[#FE6467] px-4 py-2 rounded-lg cursor-pointer">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div
+        id="hero"
+        class="min-h-[80vh] flex flex-col items-center justify-center text-white text-8xl font-bold"
+      >
+        <div class="overflow-hidden">
+          <h1 id="text1" class="">This is heading 1</h1>
+        </div>
+        <div class="overflow-hidden">
+          <h1 id="text2" class="">This is heading 1</h1>
+        </div>
+        <div class="overflow-hidden">
+          <h1 id="text3" class="">This is heading 1</h1>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Text Animation</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      #page1 h1 {
+        font-size: 20vw;
+        white-space: nowrap;
+        padding: 0px 20px;
+        background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white w-full">
+    <div id="page1" class="h-screen w-full flex items-center overflow-hidden">
+      <h1 class="uppercase font-black">We Build Brands</h1>
+    </div>
+
+    <div id="page2" class="h-screen w-full bg-zinc-900"></div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

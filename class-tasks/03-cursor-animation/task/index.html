@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      * {
+        cursor: none;
+      }
+
+      #cursor {
+        mix-blend-mode: difference;
+      }
+
+      .scale-cursor {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="cursor"
+      class="w-[50px] h-[50px] border-2 border-white rounded-full fixed -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+    ></div>
+
+    <div
+      class="bg-black min-h-screen text-white flex items-center justify-center"
+    >
+      <button id="btn" class="bg-[#745295] px-6 py-3 cursor-pointer text-lg">
+        Hover Me
+      </button>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
