@@ -109,45 +109,140 @@ function initTrustedPartner() {
 }
 
 function initPlatform() {
-  const tl = gsap.timeline({
+  const tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#platform",
+        start: "top 50%",
+      },
+    })
+    .from("#platform h3", {
+      y: 100,
+      duration: 0.5,
+      opacity: 0,
+    })
+    .from(
+      "#platform #stars span",
+      {
+        y: 100,
+        duration: 0.5,
+        opacity: 0,
+        stagger: 0.2,
+      },
+      "0.5",
+    )
+    .from(
+      "#platform .space-y-8 p",
+      {
+        y: 100,
+        duration: 0.5,
+        opacity: 0,
+        stagger: 0.2,
+      },
+      "-=0.5",
+    )
+    .from("#platform-btns a", {
+      y: 100,
+      duration: 0.5,
+      opacity: 0,
+      stagger: 0.2,
+    });
+
+  gsap.to("#platform img", {
+    y: -250,
+    ease: "none",
     scrollTrigger: {
       trigger: "#platform",
-      markers: true,
-      start: "top 50%",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+  });
+}
+
+function initMarquee() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#marquee-section",
+      // markers: true,
+
+      start: "top top",
+      end: "+=3000",
+      scrub: 1,
+      pin: true,
     },
   });
 
-  tl.from("#platform h3", {
-    y: 100,
-    duration: 0.5,
-    opacity: 0,
-  });
-  tl.from(
-    "#platform #stars span",
+  tl.fromTo(
+    "#marquee-text",
     {
-      y: 100,
-      duration: 0.5,
-      opacity: 0,
-      stagger: 0.2,
+      x: window.innerWidth,
     },
-    "0.5",
-  );
-  tl.from(
-    "#platform .space-y-8 p",
     {
-      y: 100,
-      duration: 0.5,
+      x: () => -document.getElementById("marquee-text").offsetWidth,
+    },
+  );
+}
+
+function initPortfolio() {
+  const tl = gsap.timeline({
+    defaults: { ease: "power3.out" },
+    scrollTrigger: {
+      trigger: "#portfolio",
+      start: "top 50%",
+      // markers: true,
+    },
+  });
+
+  tl.from("#portfolio h3", {
+    y: 60,
+    opacity: 0,
+    duration: 0.8,
+  }).from(
+    "#portfolio #para",
+    {
+      y: 40,
+      duration: 0.8,
       opacity: 0,
-      stagger: 0.2,
     },
     "-=0.5",
   );
 
-  tl.from("#platform-btns a", {
+  const tl2 = gsap.timeline({
+    defaults: { ease: "power3.out" },
+    scrollTrigger: {
+      trigger: "#portfolio-grid",
+      start: "top 50%",
+      markers: true,
+      start: "top 70%",
+    },
+  });
+
+  tl2.from("#portfolio-grid article", {
     y: 100,
-    duration: 0.5,
+    delay: 0.3,
+    duration: 1,
     opacity: 0,
-    stagger: 0.2,
+    stagger: 0.4,
+  });
+}
+
+function initFooter() {
+  const tl = gsap.timeline({
+    defaults: { ease: "power3.out" },
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top 70%",
+      markers: true,
+    },
+  });
+
+  tl.from("footer .grid > div", {
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger : 0.2,
+
   });
 }
 
@@ -158,3 +253,9 @@ heroAnime();
 initTrustedPartner();
 
 initPlatform();
+
+initMarquee();
+
+initPortfolio();
+
+initFooter();
