@@ -213,7 +213,7 @@ function initPortfolio() {
     scrollTrigger: {
       trigger: "#portfolio-grid",
       start: "top 50%",
-      markers: true,
+      // markers: true,
       start: "top 70%",
     },
   });
@@ -227,13 +227,98 @@ function initPortfolio() {
   });
 }
 
+function initWhatsNew() {
+  const tl = gsap.timeline({
+    defaults: { ease: "power3.out" },
+    scrollTrigger: {
+      trigger: "#features",
+      markers: true,
+      start: "top 70%",
+    },
+  });
+
+  tl.from("#feature-sub-heading", {
+    y: 100,
+    delay: 0.3,
+    duration: 1,
+    opacity: 0,
+    stagger: 0.4,
+  })
+    .from(
+      "#feature-heading",
+      {
+        y: 100,
+        delay: 0.3,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.4,
+      },
+      "-=0.9",
+    )
+    .from(
+      "#feature-para",
+      {
+        y: 100,
+        delay: 0.3,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.4,
+      },
+      "-=0.9",
+    )
+    .from(
+      "#feature-article div",
+      {
+        y: 100,
+        delay: 0.3,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+      },
+      "-=0.9",
+    )
+    .from(
+      "#features #circle",
+      {
+        x: 100,
+        delay: 0.3,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+      },
+      "-=0.8",
+    )
+    .from(
+      "#features span",
+      {
+        x: 100,
+        delay: 0.3,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+      },
+      "-=0.8",
+    )
+    .from(
+      "#features img",
+      {
+        y: 100,
+        delay: 0.3,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+      },
+      "-=0.8",
+    );
+}
+
 function initFooter() {
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     scrollTrigger: {
       trigger: "#footer",
       start: "top 70%",
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -241,8 +326,7 @@ function initFooter() {
     y: 50,
     opacity: 0,
     duration: 0.8,
-    stagger : 0.2,
-
+    stagger: 0.2,
   });
 }
 
@@ -257,5 +341,7 @@ initPlatform();
 initMarquee();
 
 initPortfolio();
+
+initWhatsNew();
 
 initFooter();
